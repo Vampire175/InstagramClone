@@ -1,0 +1,329 @@
+@font-face {
+    font-family: 'InstagramFont';
+    src: url('./fonts/optimistic.ttf') format('truetype');
+}
+
+
+* {
+    border: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================
+   LIGHT THEME DEFAULT
+========================= */
+
+body {
+    background-color: #fafafa;
+    color: #000;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+main {
+    height: 100vh;
+    margin: auto;
+    max-width: 935px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================
+   FLEX RULES
+========================= */
+
+.flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.direction-column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.justify-content-center {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.align-items-center {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.flex-wrap {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   PANELS
+========================= */
+
+.panel {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#auth {
+    max-width: 350px;
+    width: 100%;
+}
+
+#mobile {
+    max-width: 454px;
+}
+
+#mobile img {
+    height: 618px;
+}
+
+/* =========================
+   LOGIN SECTION
+========================= */
+
+.login-with-fb,
+form {
+    width: 100%;
+}
+
+.register,
+form {
+    padding: 30px 20px;
+}
+
+.login-with-fb {
+    padding: 30px 20px 20px 20px;
+}
+
+form .sr-only {
+    display: none;
+}
+
+form input {
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    color: #000;
+    margin-bottom: 8px;
+    padding: 10px;
+    width: 100%;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+form input::placeholder {
+    color: #808080;
+}
+
+form input:focus {
+    border: 1px solid #808080;
+    outline: none;
+}
+
+form button {
+    background-color: #0095f6;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    height: 35px;
+    margin-top: 10px;
+    width: 100%;
+    transition: opacity 0.2s;
+}
+
+form button:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   SEPARATOR
+========================= */
+
+.separator {
+    padding: 0 20px;
+}
+
+.separator span {
+    background-color: #dbdbdb;
+    height: 1px;
+    width: calc(100% - 10px);
+}
+
+.separator .or {
+    color: #808080;
+    font-weight: bold;
+}
+
+.separator span:first-child {
+    margin-right: 10px;
+}
+
+.separator span:last-child {
+    margin-left: 10px;
+}
+
+/* =========================
+   REGISTER
+========================= */
+
+.register * {
+    font-size: 14px;
+}
+
+.register a {
+    color: #0095f6;
+    font-weight: bold;
+}
+
+.register p {
+    margin-right: 5px;
+}
+
+/* =========================
+   DARK THEME
+========================= */
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .panel {
+        background-color: #121212;
+        border-color: #262626;
+    }
+
+    form input {
+        background-color: #1a1a1a;
+        border-color: #333;
+        color: #fff;
+    }
+
+    form input::placeholder {
+        color: #999;
+    }
+
+    form input:focus {
+        border-color: #555;
+    }
+
+    .separator span {
+        background-color: #333;
+    }
+
+    .separator .or {
+        color: #999;
+    }
+
+    .register a {
+        color: #4cb5f9;
+    }
+
+    a {
+        color: #4cb5f9;
+    }
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 767px) {
+
+    main {
+        margin: 30px auto 50px auto;
+        padding: 0 15px;
+    }
+
+    #mobile {
+        display: none;
+    }
+}
+
+#forgot-password {
+    color: 
+rgb(242, 244, 246);
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    margin-top: -150px;
+    font-family: 'InstagramFont', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#error {
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'InstagramFont', sans-serif;
+    font-weight:400;
+}
+/* =========================
+   LOADING SPINNER
+========================= */
+
+.loading-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #555;
+}
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #dbdbdb;
+    border-top-color: #0095f6;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
