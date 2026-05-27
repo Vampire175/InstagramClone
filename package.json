@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express": "^5.2.1",
+    "fs": "^0.0.1-security",
     "instagram-private-api": "^1.46.1",
     "resend": "^6.12.4"
   },
@@ -15,6 +16,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {}
+  "type": "commonjs"
 }
