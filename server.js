@@ -1,27 +1,40 @@
 const express = require("express");
-const path = require("path");
+const { IgApiClient } =
+    require("instagram-private-api");
 
 const app = express();
 
 app.use(express.json());
-
-app.use(express.static(
-    path.join(__dirname, "public")
-));
+app.use(express.static("public"));
 
 app.post("/api/login", async (req, res) => {
 
     const { username, password } = req.body;
 
-    console.log(username, password);
+    const ig = new IgApiClient();
 
-    res.json({
-        success: true
-    });
+    try {
+
+        ig.state.generateDevice(username);
+
+        await ig.account.login(
+            username,
+            password
+        );
+
+        res.json({
+            success: true
+        });
+
+    } catch (err) {
+
+        res.json({
+            success: false,
+            error: err.message
+        });
+    }
 });
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
+app.listen(3000, () => {
     console.log("Server running");
 });
